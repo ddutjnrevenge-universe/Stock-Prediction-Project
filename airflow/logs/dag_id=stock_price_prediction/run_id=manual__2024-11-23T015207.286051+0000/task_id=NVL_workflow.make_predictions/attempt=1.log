@@ -1,0 +1,26 @@
+[2024-11-23T02:08:00.330+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T02:08:00.798+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.NVL_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:08:01.205+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.NVL_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:08:01.213+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T02:08:01.256+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): NVL_workflow.make_predictions> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T02:08:01.287+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'NVL_workflow.make_predictions', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '723', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpcxwn_xd3']
+[2024-11-23T02:08:01.303+0000] {standard_task_runner.py:91} INFO - Job 723: Subtask NVL_workflow.make_predictions
+[2024-11-23T02:08:01.352+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=16469) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T02:08:01.353+0000] {standard_task_runner.py:63} INFO - Started process 16601 to run task
+[2024-11-23T02:08:01.519+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.NVL_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T02:08:02.021+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='NVL_workflow.make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T02:08:02.025+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T02:08:14.517+0000] {saving_utils.py:256} WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2024-11-23T02:08:16.666+0000] {logging_mixin.py:188} INFO -  1/13 ━━━━━━━━━━━━━━━━━━━━ 6s 540ms/step
+[2024-11-23T02:08:16.719+0000] {logging_mixin.py:188} INFO -  2/13 ━━━━━━━━━━━━━━━━━━━━ 0s 53ms/step 
+[2024-11-23T02:08:16.722+0000] {logging_mixin.py:188} INFO -  3/13 ━━━━━━━━━━━━━━━━━━━━ 0s 28ms/step 
+[2024-11-23T02:08:16.783+0000] {logging_mixin.py:188} INFO -  6/13 ━━━━━━━━━━━━━━━━━━━━ 0s 23ms/step
+[2024-11-23T02:08:16.844+0000] {logging_mixin.py:188} INFO - 10/13 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step
+[2024-11-23T02:08:16.910+0000] {logging_mixin.py:188} INFO - 12/13 ━━━━━━━━━━━━━━━━━━━━ 0s 22ms/step
+[2024-11-23T02:08:17.407+0000] {logging_mixin.py:188} INFO - 13/13 ━━━━━━━━━━━━━━━━━━━━ 0s 62ms/step
+[2024-11-23T02:08:17.410+0000] {logging_mixin.py:188} INFO - 13/13 ━━━━━━━━━━━━━━━━━━━━ 1s 62ms/step
+[2024-11-23T02:08:17.499+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-23T02:08:17.500+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T02:08:17.524+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_price_prediction, task_id=NVL_workflow.make_predictions, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T020800, end_date=20241123T020817
+[2024-11-23T02:08:17.881+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-23T02:08:17.940+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

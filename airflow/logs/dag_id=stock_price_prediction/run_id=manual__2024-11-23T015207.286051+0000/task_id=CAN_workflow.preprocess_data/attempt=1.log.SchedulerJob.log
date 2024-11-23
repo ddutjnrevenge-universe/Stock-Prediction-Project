@@ -1,0 +1,1 @@
+[2024-11-23T01:53:55.913+0000] {task_context_logger.py:104} ERROR - Executor reports task instance <TaskInstance: stock_price_prediction.CAN_workflow.preprocess_data manual__2024-11-23T01:52:07.286051+00:00 [queued]> finished (failed) although the task says it's queued. (Info: None) Was the task killed externally?

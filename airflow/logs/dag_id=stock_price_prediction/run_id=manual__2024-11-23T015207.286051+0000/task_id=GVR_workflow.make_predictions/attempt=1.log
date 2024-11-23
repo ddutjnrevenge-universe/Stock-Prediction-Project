@@ -1,0 +1,56 @@
+[2024-11-23T02:11:12.878+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T02:11:12.997+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.GVR_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:11:13.100+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.GVR_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:11:13.100+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T02:11:13.115+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): GVR_workflow.make_predictions> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T02:11:13.124+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=19295) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T02:11:13.125+0000] {standard_task_runner.py:63} INFO - Started process 19296 to run task
+[2024-11-23T02:11:13.124+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'GVR_workflow.make_predictions', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '790', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpm37s80jt']
+[2024-11-23T02:11:13.126+0000] {standard_task_runner.py:91} INFO - Job 790: Subtask GVR_workflow.make_predictions
+[2024-11-23T02:11:13.167+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.GVR_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T02:11:13.367+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='GVR_workflow.make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T02:11:13.368+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T02:11:16.360+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T02:11:16.361+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/stock_price_prediction_dag.py", line 55, in make_predictions_task
+    make_predictions(stock_name, days)
+  File "/external_files/scripts/make_predictions.py", line 7, in make_predictions
+    model = load_model(f"models/{stock_name}_model.h5")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/keras/src/saving/saving_api.py", line 196, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/keras/src/legacy/saving/legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/h5py/_hl/files.py", line 561, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/h5py/_hl/files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'models/GVR_model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-11-23T02:11:16.383+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_price_prediction, task_id=GVR_workflow.make_predictions, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T021112, end_date=20241123T021116
+[2024-11-23T02:11:16.396+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 790 for task GVR_workflow.make_predictions ([Errno 2] Unable to synchronously open file (unable to open file: name = 'models/GVR_model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0); 19296)
+[2024-11-23T02:11:16.429+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-23T02:11:16.450+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-23T02:11:16.452+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

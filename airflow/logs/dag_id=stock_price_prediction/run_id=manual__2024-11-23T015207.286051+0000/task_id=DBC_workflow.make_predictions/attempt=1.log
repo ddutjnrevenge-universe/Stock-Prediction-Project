@@ -1,0 +1,24 @@
+[2024-11-23T02:08:00.157+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T02:08:00.732+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.DBC_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:08:01.226+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.DBC_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T02:08:01.229+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T02:08:01.302+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): DBC_workflow.make_predictions> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T02:08:01.331+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'DBC_workflow.make_predictions', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '722', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpr8rbghlc']
+[2024-11-23T02:08:01.336+0000] {standard_task_runner.py:91} INFO - Job 722: Subtask DBC_workflow.make_predictions
+[2024-11-23T02:08:01.386+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=16467) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T02:08:01.389+0000] {standard_task_runner.py:63} INFO - Started process 16617 to run task
+[2024-11-23T02:08:01.513+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.DBC_workflow.make_predictions manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T02:08:01.855+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='DBC_workflow.make_predictions' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T02:08:01.857+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T02:08:13.373+0000] {saving_utils.py:256} WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+[2024-11-23T02:08:15.260+0000] {logging_mixin.py:188} INFO -  1/20 ━━━━━━━━━━━━━━━━━━━━ 7s 398ms/step
+[2024-11-23T02:08:15.314+0000] {logging_mixin.py:188} INFO -  9/20 ━━━━━━━━━━━━━━━━━━━━ 0s 7ms/step  
+[2024-11-23T02:08:15.372+0000] {logging_mixin.py:188} INFO - 17/20 ━━━━━━━━━━━━━━━━━━━━ 0s 7ms/step
+[2024-11-23T02:08:15.604+0000] {logging_mixin.py:188} INFO - 20/20 ━━━━━━━━━━━━━━━━━━━━ 0s 18ms/step
+[2024-11-23T02:08:15.605+0000] {logging_mixin.py:188} INFO - 20/20 ━━━━━━━━━━━━━━━━━━━━ 1s 18ms/step
+[2024-11-23T02:08:16.196+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-23T02:08:16.197+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T02:08:16.223+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_price_prediction, task_id=DBC_workflow.make_predictions, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T020800, end_date=20241123T020816
+[2024-11-23T02:08:16.478+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-23T02:08:16.559+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-23T02:08:16.602+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

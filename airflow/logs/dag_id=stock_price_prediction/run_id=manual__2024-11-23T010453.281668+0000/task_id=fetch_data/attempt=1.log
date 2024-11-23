@@ -1,0 +1,57 @@
+[2024-11-23T01:04:53.666+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:04:53.700+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data manual__2024-11-23T01:04:53.281668+00:00 [queued]>
+[2024-11-23T01:04:53.710+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data manual__2024-11-23T01:04:53.281668+00:00 [queued]>
+[2024-11-23T01:04:53.711+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:04:53.738+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data> on 2024-11-23 01:04:53.281668+00:00
+[2024-11-23T01:04:53.750+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'fetch_data', 'manual__2024-11-23T01:04:53.281668+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpmvhlfg9k']
+[2024-11-23T01:04:53.755+0000] {standard_task_runner.py:91} INFO - Job 18: Subtask fetch_data
+[2024-11-23T01:04:53.757+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=705) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:04:53.758+0000] {standard_task_runner.py:63} INFO - Started process 707 to run task
+[2024-11-23T01:04:53.805+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.fetch_data manual__2024-11-23T01:04:53.281668+00:00 [running]> on host c3907abb67cc
+[2024-11-23T01:04:53.895+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='fetch_data' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:04:53.281668+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:04:53.281668+00:00'
+[2024-11-23T01:04:53.896+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:04:54.946+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/vnstock/__init__.py:18 UserWarning: Vui lòng chuyển đổi sang Vnstock3 thế hệ mới (3.1.0) với câu lệnh: `pip install vnstock3 --upgrade`.
+Từ 1/1/2025, vnstock3 sẽ được cài đặt khi sử dụng cú pháp `pip install vnstock` thay cho Vnstock Legacy hiện tại.
+Xem chi tiết [chuyển đổi sang vnstock3](https://vnstocks.com/docs/tai-lieu/migration-chuyen-doi-sang-vnstock3).
+Phiên bản Vnstock Legacy (0.2.9.2.3) bạn đang sử dụng sẽ không được nâng cấp thêm.
+Từ 7/10/2024 Vnstock giới thiệu nhóm Facebook Cộng đồng Vnstock, tham gia thảo luận tại đây: https://www.facebook.com/groups/vnstock.official
+[2024-11-23T01:04:55.138+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T01:04:55.139+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/stock_price_prediction_dag.py", line 28, in fetch_data_task
+    fetch_data(stock_name)
+  File "/external_files/scripts/fetch_data.py", line 6, in fetch_data
+    data.to_csv(f"data/raw/{stock_name}_data.csv", index=False)
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/core/generic.py", line 3902, in to_csv
+    return DataFrameRenderer(formatter).to_csv(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/format.py", line 1152, in to_csv
+    csv_formatter.save()
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/formats/csvs.py", line 247, in save
+    with get_handle(
+         ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 739, in get_handle
+    check_parent_directory(str(handle))
+  File "/home/airflow/.local/lib/python3.12/site-packages/pandas/io/common.py", line 604, in check_parent_directory
+    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
+OSError: Cannot save file into a non-existent directory: 'data/raw'
+[2024-11-23T01:04:55.154+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_price_prediction, task_id=fetch_data, run_id=manual__2024-11-23T01:04:53.281668+00:00, execution_date=20241123T010453, start_date=20241123T010453, end_date=20241123T010455
+[2024-11-23T01:04:55.165+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 18 for task fetch_data (Cannot save file into a non-existent directory: 'data/raw'; 707)
+[2024-11-23T01:04:55.216+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-23T01:04:55.236+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-23T01:04:55.238+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

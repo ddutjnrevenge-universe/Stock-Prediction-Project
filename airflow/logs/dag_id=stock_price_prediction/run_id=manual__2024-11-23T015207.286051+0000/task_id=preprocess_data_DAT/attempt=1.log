@@ -1,0 +1,17 @@
+[2024-11-23T01:56:09.270+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:56:09.522+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.preprocess_data_DAT manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:56:09.732+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.preprocess_data_DAT manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:56:09.750+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:56:09.828+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): preprocess_data_DAT> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T01:56:09.870+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=4139) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:56:09.875+0000] {standard_task_runner.py:63} INFO - Started process 4167 to run task
+[2024-11-23T01:56:09.886+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'preprocess_data_DAT', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '482', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpf7homriy']
+[2024-11-23T01:56:09.890+0000] {standard_task_runner.py:91} INFO - Job 482: Subtask preprocess_data_DAT
+[2024-11-23T01:56:10.039+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.preprocess_data_DAT manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T01:56:10.266+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='preprocess_data_DAT' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T01:56:10.267+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:56:14.836+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-23T01:56:14.838+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T01:56:14.869+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_price_prediction, task_id=preprocess_data_DAT, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T015609, end_date=20241123T015614
+[2024-11-23T01:56:15.003+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-23T01:56:15.023+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

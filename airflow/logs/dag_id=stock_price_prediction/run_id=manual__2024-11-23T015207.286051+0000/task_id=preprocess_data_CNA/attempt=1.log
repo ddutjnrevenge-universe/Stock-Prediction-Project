@@ -1,0 +1,60 @@
+[2024-11-23T01:55:24.760+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:55:25.241+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.preprocess_data_CNA manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:55:25.507+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.preprocess_data_CNA manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:55:25.510+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:55:25.578+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): preprocess_data_CNA> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T01:55:25.626+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3061) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:55:25.629+0000] {standard_task_runner.py:63} INFO - Started process 3074 to run task
+[2024-11-23T01:55:25.617+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'preprocess_data_CNA', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '396', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmp28x5x30p']
+[2024-11-23T01:55:25.635+0000] {standard_task_runner.py:91} INFO - Job 396: Subtask preprocess_data_CNA
+[2024-11-23T01:55:25.833+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.preprocess_data_CNA manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T01:55:26.125+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='preprocess_data_CNA' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T01:55:26.130+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:55:29.553+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T01:55:29.554+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/stock_price_prediction_dag.py", line 49, in preprocess_data_task
+    preprocess_data(stock_name, days)
+  File "/external_files/scripts/preprocess_data.py", line 15, in preprocess_data
+    training_set_scaled = scaler.fit_transform(training_set)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/_set_output.py", line 316, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1098, in fit_transform
+    return self.fit(X, **fit_params).transform(X)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 450, in fit
+    return self.partial_fit(X, y)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/preprocessing/_data.py", line 490, in partial_fit
+    X = self._validate_data(
+        ^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/base.py", line 633, in _validate_data
+    out = check_array(X, input_name="X", **check_params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1087, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 1)) while a minimum of 1 is required by MinMaxScaler.
+[2024-11-23T01:55:29.626+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_price_prediction, task_id=preprocess_data_CNA, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T015525, end_date=20241123T015529
+[2024-11-23T01:55:30.530+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 396 for task preprocess_data_CNA (Found array with 0 sample(s) (shape=(0, 1)) while a minimum of 1 is required by MinMaxScaler.; 3074)
+[2024-11-23T01:55:30.661+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-23T01:55:30.690+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,233 @@
+[2024-11-23T01:56:50.917+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:56:51.409+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.train_model_ABT manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:56:51.890+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.train_model_ABT manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:56:51.891+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:56:52.345+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): train_model_ABT> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T01:56:52.404+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=5131) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:56:52.430+0000] {standard_task_runner.py:63} INFO - Started process 5138 to run task
+[2024-11-23T01:56:52.415+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'train_model_ABT', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '550', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpvsdojn_5']
+[2024-11-23T01:56:52.454+0000] {standard_task_runner.py:91} INFO - Job 550: Subtask train_model_ABT
+[2024-11-23T01:56:52.672+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.train_model_ABT manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T01:56:52.901+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='train_model_ABT' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T01:56:52.906+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:57:26.125+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/keras/src/layers/convolutional/base_conv.py:107 UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+[2024-11-23T01:57:26.554+0000] {logging_mixin.py:188} INFO - Epoch 1/20
+[2024-11-23T01:57:32.526+0000] {logging_mixin.py:188} INFO -  1/72 ━━━━━━━━━━━━━━━━━━━━ 7:02 6s/step - loss: 0.4098
+[2024-11-23T01:57:32.595+0000] {logging_mixin.py:188} INFO -  2/72 ━━━━━━━━━━━━━━━━━━━━ 6s 96ms/step - loss: 0.3641
+[2024-11-23T01:57:32.684+0000] {logging_mixin.py:188} INFO -  3/72 ━━━━━━━━━━━━━━━━━━━━ 6s 92ms/step - loss: 0.3292
+[2024-11-23T01:57:32.766+0000] {logging_mixin.py:188} INFO -  5/72 ━━━━━━━━━━━━━━━━━━━━ 4s 66ms/step - loss: 0.2725
+[2024-11-23T01:57:32.838+0000] {logging_mixin.py:188} INFO -  6/72 ━━━━━━━━━━━━━━━━━━━━ 4s 65ms/step - loss: 0.2508
+[2024-11-23T01:57:32.935+0000] {logging_mixin.py:188} INFO -  9/72 ━━━━━━━━━━━━━━━━━━━━ 3s 54ms/step - loss: 0.2082
+[2024-11-23T01:57:33.024+0000] {logging_mixin.py:188} INFO - 11/72 ━━━━━━━━━━━━━━━━━━━━ 3s 52ms/step - loss: 0.1882
+[2024-11-23T01:57:33.094+0000] {logging_mixin.py:188} INFO - 12/72 ━━━━━━━━━━━━━━━━━━━━ 3s 54ms/step - loss: 0.1798
+[2024-11-23T01:57:33.183+0000] {logging_mixin.py:188} INFO - 13/72 ━━━━━━━━━━━━━━━━━━━━ 3s 57ms/step - loss: 0.1722
+[2024-11-23T01:57:33.268+0000] {logging_mixin.py:188} INFO - 14/72 ━━━━━━━━━━━━━━━━━━━━ 3s 59ms/step - loss: 0.1656
+[2024-11-23T01:57:33.343+0000] {logging_mixin.py:188} INFO - 15/72 ━━━━━━━━━━━━━━━━━━━━ 3s 60ms/step - loss: 0.1595
+[2024-11-23T01:57:33.427+0000] {logging_mixin.py:188} INFO - 17/72 ━━━━━━━━━━━━━━━━━━━━ 3s 58ms/step - loss: 0.1490
+[2024-11-23T01:57:33.511+0000] {logging_mixin.py:188} INFO - 18/72 ━━━━━━━━━━━━━━━━━━━━ 3s 60ms/step - loss: 0.1443
+[2024-11-23T01:57:33.599+0000] {logging_mixin.py:188} INFO - 19/72 ━━━━━━━━━━━━━━━━━━━━ 3s 61ms/step - loss: 0.1400
+[2024-11-23T01:57:33.657+0000] {logging_mixin.py:188} INFO - 20/72 ━━━━━━━━━━━━━━━━━━━━ 3s 61ms/step - loss: 0.1359
+[2024-11-23T01:57:33.733+0000] {logging_mixin.py:188} INFO - 21/72 ━━━━━━━━━━━━━━━━━━━━ 3s 62ms/step - loss: 0.1322
+[2024-11-23T01:57:34.151+0000] {logging_mixin.py:188} INFO - 23/72 ━━━━━━━━━━━━━━━━━━━━ 3s 68ms/step - loss: 0.1254
+[2024-11-23T01:57:34.486+0000] {logging_mixin.py:188} INFO - 24/72 ━━━━━━━━━━━━━━━━━━━━ 3s 77ms/step - loss: 0.1223
+[2024-11-23T01:57:35.057+0000] {logging_mixin.py:188} INFO - 25/72 ━━━━━━━━━━━━━━━━━━━━ 4s 97ms/step - loss: 0.1194
+[2024-11-23T01:57:41.826+0000] {logging_mixin.py:188} INFO - 26/72 ━━━━━━━━━━━━━━━━━━━━ 6s 141ms/step - loss: 0.1166
+[2024-11-23T01:57:41.861+0000] {logging_mixin.py:188} INFO - 27/72 ━━━━━━━━━━━━━━━━━━━━ 16s 360ms/step - loss: 0.1140
+[2024-11-23T01:57:41.935+0000] {logging_mixin.py:188} INFO - 28/72 ━━━━━━━━━━━━━━━━━━━━ 15s 349ms/step - loss: 0.1116
+[2024-11-23T01:57:42.019+0000] {logging_mixin.py:188} INFO - 30/72 ━━━━━━━━━━━━━━━━━━━━ 13s 328ms/step - loss: 0.1070
+[2024-11-23T01:57:42.106+0000] {logging_mixin.py:188} INFO - 31/72 ━━━━━━━━━━━━━━━━━━━━ 13s 320ms/step - loss: 0.1049
+[2024-11-23T01:57:42.192+0000] {logging_mixin.py:188} INFO - 32/72 ━━━━━━━━━━━━━━━━━━━━ 12s 312ms/step - loss: 0.1029
+[2024-11-23T01:57:42.492+0000] {logging_mixin.py:188} INFO - 33/72 ━━━━━━━━━━━━━━━━━━━━ 12s 312ms/step - loss: 0.1010
+[2024-11-23T01:57:42.589+0000] {logging_mixin.py:188} INFO - 35/72 ━━━━━━━━━━━━━━━━━━━━ 10s 297ms/step - loss: 0.0974
+[2024-11-23T01:57:42.940+0000] {logging_mixin.py:188} INFO - 37/72 ━━━━━━━━━━━━━━━━━━━━ 10s 290ms/step - loss: 0.0940
+[2024-11-23T01:57:52.647+0000] {logging_mixin.py:188} INFO - 38/72 ━━━━━━━━━━━━━━━━━━━━ 12s 374ms/step - loss: 0.0925
+[2024-11-23T01:59:08.732+0000] {logging_mixin.py:188} INFO - 39/72 ━━━━━━━━━━━━━━━━━━━━ 57s 2s/step - loss: 0.0910   
+[2024-11-23T01:59:08.920+0000] {logging_mixin.py:188} INFO - 40/72 ━━━━━━━━━━━━━━━━━━━━ 1:19 2s/step - loss: 0.0895
+[2024-11-23T01:59:09.054+0000] {logging_mixin.py:188} INFO - 41/72 ━━━━━━━━━━━━━━━━━━━━ 1:14 2s/step - loss: 0.0881
+[2024-11-23T01:59:09.361+0000] {logging_mixin.py:188} INFO - 43/72 ━━━━━━━━━━━━━━━━━━━━ 1:06 2s/step - loss: 0.0855
+[2024-11-23T01:59:09.964+0000] {logging_mixin.py:188} INFO - 44/72 ━━━━━━━━━━━━━━━━━━━━ 1:03 2s/step - loss: 0.0843
+[2024-11-23T01:59:10.056+0000] {logging_mixin.py:188} INFO - 45/72 ━━━━━━━━━━━━━━━━━━━━ 59s 2s/step - loss: 0.0831 
+[2024-11-23T01:59:10.223+0000] {logging_mixin.py:188} INFO - 47/72 ━━━━━━━━━━━━━━━━━━━━ 53s 2s/step - loss: 0.0808
+[2024-11-23T01:59:10.384+0000] {logging_mixin.py:188} INFO - 48/72 ━━━━━━━━━━━━━━━━━━━━ 49s 2s/step - loss: 0.0797
+[2024-11-23T01:58:34.208+0000] {job.py:218} ERROR - Job heartbeat got an exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 192, in heartbeat
+    self._merge_from(Job._fetch_from_db(self, session))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 115, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 89, in wrapped_function
+    for attempt in run_with_db_retries(max_retries=retries, logger=logger, **retry_kwargs):
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 347, in __iter__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 325, in iter
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/tenacity/__init__.py", line 158, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/retries.py", line 98, in wrapped_function
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/jobs/job.py", line 316, in _fetch_from_db
+    session.merge(job)
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3056, in merge
+    return self._merge(
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3136, in _merge
+    merged = self.get(
+             ^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2853, in get
+    return self._get_impl(
+           ^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2975, in _get_impl
+    return db_load_fn(
+           ^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/loading.py", line 530, in load_on_pk_identity
+    session.execute(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 256, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2024-11-23T01:59:10.565+0000] {logging_mixin.py:188} INFO - 49/72 ━━━━━━━━━━━━━━━━━━━━ 46s 2s/step - loss: 0.0786
+[2024-11-23T01:59:10.568+0000] {job.py:226} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2024-11-23T01:59:10.623+0000] {logging_mixin.py:188} INFO - 50/72 ━━━━━━━━━━━━━━━━━━━━ 44s 2s/step - loss: 0.0776
+[2024-11-23T01:59:10.764+0000] {logging_mixin.py:188} INFO - 51/72 ━━━━━━━━━━━━━━━━━━━━ 41s 2s/step - loss: 0.0766
+[2024-11-23T01:59:10.821+0000] {logging_mixin.py:188} INFO - 52/72 ━━━━━━━━━━━━━━━━━━━━ 38s 2s/step - loss: 0.0757
+[2024-11-23T01:59:11.036+0000] {logging_mixin.py:188} INFO - 53/72 ━━━━━━━━━━━━━━━━━━━━ 36s 2s/step - loss: 0.0747
+[2024-11-23T01:59:11.140+0000] {logging_mixin.py:188} INFO - 55/72 ━━━━━━━━━━━━━━━━━━━━ 31s 2s/step - loss: 0.0729
+[2024-11-23T01:59:11.143+0000] {logging_mixin.py:188} INFO - 54/72 ━━━━━━━━━━━━━━━━━━━━ 33s 2s/step - loss: 0.0721
+[2024-11-23T01:59:11.260+0000] {logging_mixin.py:188} INFO - 58/72 ━━━━━━━━━━━━━━━━━━━━ 24s 2s/step - loss: 0.0690
+[2024-11-23T01:59:11.320+0000] {logging_mixin.py:188} INFO - 60/72 ━━━━━━━━━━━━━━━━━━━━ 20s 2s/step - loss: 0.0675
+[2024-11-23T01:59:12.676+0000] {logging_mixin.py:188} INFO - 62/72 ━━━━━━━━━━━━━━━━━━━━ 16s 2s/step - loss: 0.0661
+[2024-11-23T01:59:12.716+0000] {logging_mixin.py:188} INFO - 63/72 ━━━━━━━━━━━━━━━━━━━━ 14s 2s/step - loss: 0.0655
+[2024-11-23T01:59:12.854+0000] {logging_mixin.py:188} INFO - 64/72 ━━━━━━━━━━━━━━━━━━━━ 12s 2s/step - loss: 0.0648
+[2024-11-23T01:59:12.931+0000] {logging_mixin.py:188} INFO - 66/72 ━━━━━━━━━━━━━━━━━━━━ 9s 2s/step - loss: 0.0635 
+[2024-11-23T01:59:13.459+0000] {logging_mixin.py:188} INFO - 67/72 ━━━━━━━━━━━━━━━━━━━━ 7s 2s/step - loss: 0.0629
+[2024-11-23T01:59:14.203+0000] {logging_mixin.py:188} INFO - 68/72 ━━━━━━━━━━━━━━━━━━━━ 6s 2s/step - loss: 0.0623
+[2024-11-23T01:59:15.182+0000] {logging_mixin.py:188} INFO - 69/72 ━━━━━━━━━━━━━━━━━━━━ 4s 2s/step - loss: 0.0618
+[2024-11-23T01:59:16.532+0000] {logging_mixin.py:188} INFO - 70/72 ━━━━━━━━━━━━━━━━━━━━ 2s 1s/step - loss: 0.0612
+[2024-11-23T02:00:44.148+0000] {job.py:226} ERROR - Job heartbeat failed with error. Scheduler is in unhealthy state
+[2024-11-23T02:01:13.992+0000] {logging_mixin.py:188} INFO - 71/72 ━━━━━━━━━━━━━━━━━━━━ 1s 2s/step - loss: 0.0606
+[2024-11-23T02:01:19.421+0000] {logging_mixin.py:188} INFO - 72/72 ━━━━━━━━━━━━━━━━━━━━ 0s 2s/step - loss: 0.0601
+[2024-11-23T02:01:19.474+0000] {logging_mixin.py:188} INFO - 72/72 ━━━━━━━━━━━━━━━━━━━━ 233s 3s/step - loss: 0.0596
+[2024-11-23T02:01:19.482+0000] {logging_mixin.py:188} INFO - Epoch 2/20
+[2024-11-23T02:01:19.770+0000] {logging_mixin.py:188} INFO -  1/72 ━━━━━━━━━━━━━━━━━━━━ 19s 281ms/step - loss: 0.0042

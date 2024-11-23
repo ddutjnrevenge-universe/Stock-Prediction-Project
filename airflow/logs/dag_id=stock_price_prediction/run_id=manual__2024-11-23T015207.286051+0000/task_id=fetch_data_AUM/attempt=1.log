@@ -1,0 +1,55 @@
+[2024-11-23T01:54:53.862+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:54:54.215+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data_AUM manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:54:54.501+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data_AUM manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:54:54.513+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:54:55.151+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_AUM> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T01:54:55.165+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'fetch_data_AUM', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '338', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmpqjwvxmt7']
+[2024-11-23T01:54:55.169+0000] {standard_task_runner.py:91} INFO - Job 338: Subtask fetch_data_AUM
+[2024-11-23T01:54:55.170+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2890) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:54:55.171+0000] {standard_task_runner.py:63} INFO - Started process 2893 to run task
+[2024-11-23T01:54:55.305+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.fetch_data_AUM manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T01:54:55.672+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='fetch_data_AUM' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T01:54:55.674+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:54:59.196+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/vnstock/__init__.py:18 UserWarning: Vui lòng chuyển đổi sang Vnstock3 thế hệ mới (3.1.0) với câu lệnh: `pip install vnstock3 --upgrade`.
+Từ 1/1/2025, vnstock3 sẽ được cài đặt khi sử dụng cú pháp `pip install vnstock` thay cho Vnstock Legacy hiện tại.
+Xem chi tiết [chuyển đổi sang vnstock3](https://vnstocks.com/docs/tai-lieu/migration-chuyen-doi-sang-vnstock3).
+Phiên bản Vnstock Legacy (0.2.9.2.3) bạn đang sử dụng sẽ không được nâng cấp thêm.
+Từ 7/10/2024 Vnstock giới thiệu nhóm Facebook Cộng đồng Vnstock, tham gia thảo luận tại đây: https://www.facebook.com/groups/vnstock.official
+[2024-11-23T01:54:59.244+0000] {fetch_data.py:10} INFO - Directory data/raw created or already exists.
+[2024-11-23T01:54:59.494+0000] {logging_mixin.py:188} INFO - Error in API response {"status":400,"code":"BAD_REQUEST","message":"invalid symbol"}
+[2024-11-23T01:54:59.495+0000] {logging_mixin.py:188} INFO -  
+[2024-11-23T01:54:59.496+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T01:54:59.496+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/stock_price_prediction_dag.py", line 43, in fetch_data_task
+    fetch_data(stock_name)
+  File "/external_files/scripts/fetch_data.py", line 13, in fetch_data
+    data = stock_historical_data(stock_name, "2005-01-01", "2024-11-1")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/vnstock/technical.py", line 24, in stock_historical_data
+    df = ohlc_data(symbol, start_date, end_date, resolution, type, headers=entrade_headers)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/vnstock/technical.py", line 191, in ohlc_data
+    return df
+           ^^
+UnboundLocalError: cannot access local variable 'df' where it is not associated with a value
+[2024-11-23T01:54:59.520+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=stock_price_prediction, task_id=fetch_data_AUM, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T015454, end_date=20241123T015459
+[2024-11-23T01:54:59.553+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 338 for task fetch_data_AUM (cannot access local variable 'df' where it is not associated with a value; 2893)
+[2024-11-23T01:54:59.608+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-23T01:54:59.701+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-23T01:54:59.729+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

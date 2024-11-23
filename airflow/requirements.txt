@@ -1,0 +1,8 @@
+apache-airflow
+tensorflow
+numpy
+matplotlib
+pandas
+scikit-learn
+vnstock
+IPython

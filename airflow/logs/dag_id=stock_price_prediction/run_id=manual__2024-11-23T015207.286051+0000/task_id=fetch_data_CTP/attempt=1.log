@@ -1,0 +1,24 @@
+[2024-11-23T01:54:54.022+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-23T01:54:54.429+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data_CTP manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:54:54.663+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: stock_price_prediction.fetch_data_CTP manual__2024-11-23T01:52:07.286051+00:00 [queued]>
+[2024-11-23T01:54:54.667+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-23T01:54:55.158+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): fetch_data_CTP> on 2024-11-23 01:52:07.286051+00:00
+[2024-11-23T01:54:55.179+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2889) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-23T01:54:55.181+0000] {standard_task_runner.py:63} INFO - Started process 2894 to run task
+[2024-11-23T01:54:55.178+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'stock_price_prediction', 'fetch_data_CTP', 'manual__2024-11-23T01:52:07.286051+00:00', '--job-id', '339', '--raw', '--subdir', 'DAGS_FOLDER/stock_price_prediction_dag.py', '--cfg-path', '/tmp/tmplp1yuu2a']
+[2024-11-23T01:54:55.187+0000] {standard_task_runner.py:91} INFO - Job 339: Subtask fetch_data_CTP
+[2024-11-23T01:54:55.385+0000] {task_command.py:426} INFO - Running <TaskInstance: stock_price_prediction.fetch_data_CTP manual__2024-11-23T01:52:07.286051+00:00 [running]> on host ad983beda88b
+[2024-11-23T01:54:55.749+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='stock_price_prediction' AIRFLOW_CTX_TASK_ID='fetch_data_CTP' AIRFLOW_CTX_EXECUTION_DATE='2024-11-23T01:52:07.286051+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-23T01:52:07.286051+00:00'
+[2024-11-23T01:54:55.751+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-23T01:54:59.612+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/vnstock/__init__.py:18 UserWarning: Vui lòng chuyển đổi sang Vnstock3 thế hệ mới (3.1.0) với câu lệnh: `pip install vnstock3 --upgrade`.
+Từ 1/1/2025, vnstock3 sẽ được cài đặt khi sử dụng cú pháp `pip install vnstock` thay cho Vnstock Legacy hiện tại.
+Xem chi tiết [chuyển đổi sang vnstock3](https://vnstocks.com/docs/tai-lieu/migration-chuyen-doi-sang-vnstock3).
+Phiên bản Vnstock Legacy (0.2.9.2.3) bạn đang sử dụng sẽ không được nâng cấp thêm.
+Từ 7/10/2024 Vnstock giới thiệu nhóm Facebook Cộng đồng Vnstock, tham gia thảo luận tại đây: https://www.facebook.com/groups/vnstock.official
+[2024-11-23T01:54:59.628+0000] {fetch_data.py:10} INFO - Directory data/raw created or already exists.
+[2024-11-23T01:55:00.523+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-23T01:55:00.539+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-23T01:55:00.593+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=stock_price_prediction, task_id=fetch_data_CTP, run_id=manual__2024-11-23T01:52:07.286051+00:00, execution_date=20241123T015207, start_date=20241123T015454, end_date=20241123T015500
+[2024-11-23T01:55:01.606+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-23T01:55:01.740+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-23T01:55:01.754+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
