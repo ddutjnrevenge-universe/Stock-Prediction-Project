@@ -1,1 +1,3 @@
 Flask_App
+airflow/__pycache__
+airflow/logs
