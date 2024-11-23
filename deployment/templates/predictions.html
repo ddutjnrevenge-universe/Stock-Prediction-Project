@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicted Prices</title>
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            color: #fff;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 1300px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h2 {
+            color: #fff6cc;
+            font-size: 1.5rem;
+        }
+        table {
+            width: 100%;
+            margin-top: 1.5rem;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        th {
+            background-color: #4ca1af;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #5e9ca0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background-color: #f3ff8c;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Prediction Results of the {{ total_prediction_day }}-th day for {{ stock_name }}</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Predicted Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for date, price in predictions %}
+                <tr>
+                    <td>{{ date }}</td>
+                    <td>{{ price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>

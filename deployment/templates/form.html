@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnam Stock Price Prediction</title>
+    <!-- icon next to title on taskbar -->
+    <link rel="icon" href="data:,">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            color: #fff;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 1300px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        h1 { color: #a8e9ee; font-size: 2.2rem; }
+        h2 { color: #fff6cc; font-size: 1.5rem; }
+        ul { list-style-type: square; text-align: left; padding-left: 1.5rem; font-size: 1rem; }
+        ul li { margin-bottom: 0.5rem; }
+        input[type="text"], input[type="number"] {
+            width: 80%; padding: 0.6rem; border: 2px solid #4ca1af; border-radius: 5px;
+            margin-top: 0.5rem; margin-bottom: 1rem; font-size: 1rem; color: #333; background-color: #fff;
+        }
+        input[type="submit"] { background-color: #5e9ca0;
+            color: #ffffff;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        input[type="submit"]:hover { background-color: #f3ff8c;
+            color: #000000;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .plot-section img { max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5); }
+        .error { color: red; margin-top: 1rem; }
+        .loading { display: none; color: #ffdd57; font-size: 1.2rem; margin-top: 1.5rem; }
+        a {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.7rem 1.5rem;
+            background-color: #5e9ca0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background-color: #f3ff8c;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Predict Vietnam STOCK Price</h1>
+        <h2>Please enter the following information:</h2>
+        <ul>
+            <li><strong>Stock Name:</strong> Use the CAPITALIZED ticker symbol for the stock. Examples include VIC for Vingroup, VCB for Vietcombank, and HPG for Hoa Phat Group. 📊</li>
+            <li><strong>Epochs:</strong> The number of passes through the entire dataset. More epochs can improve accuracy. Setting it to 50 provides good performance. 😊</li>
+            <li><strong>Ahead:</strong> The number of days you want to predict ahead. Shorter prediction windows yield higher accuracy, as predicting further into the future is more challenging. 📈</li>
+            <li><strong>Days:</strong> The number of previous days to use as the dataset. For example, using 30 days of data helps predict the stock price for the next day or further ahead. ⏳</li>
+        </ul>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <div class="loading">Predicting stock price... 🤖</div>
+        
+        <form method="POST" onsubmit="showLoadingMessage()">
+            <p>Stock Name: <input type="text" name="Name" placeholder="e.g., VIC, VCB, HPG" required></p>
+            <p>Epochs: <input type="number" name="Epochs" placeholder="e.g., 50" required></p>
+            <p>Ahead (days): <input type="number" name="Ahead" placeholder="e.g., 10" required></p>
+            <p>Days (window size): <input type="number" name="Days" placeholder="e.g., 30" required></p>
+            <p><input type="submit" value="Predict Now"></p>
+        </form>
+
+        {% if plot_url %}
+        <div class="plot-section">
+            <h2>Prediction Results of the {{ total_prediction_day }}-th day for {{ stock_name }}</h2>
+            <img src="data:image/png;base64,{{ plot_url }}" alt="Prediction Plot">
+            <a href="/predict" target="_blank" rel="noopener noreferrer">See full prediction results</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function showLoadingMessage() {
+            document.querySelector('.loading').style.display = 'block';
+            document.querySelector('form').style.display = 'none';
+        }
+        // Prevent resubmission of form on page reload
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
+
+</body>
+</html>
