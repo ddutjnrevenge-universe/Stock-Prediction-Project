@@ -2352,3 +2352,31 @@ airflow.exceptions.AirflowException: Tried to create relationships between tasks
 [2024-11-23T03:54:25.876+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:54:25.876+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2024-11-23T03:54:25.902+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:54:25.902+0000] {dag.py:3954} INFO - Setting next_dagrun for stock_price_prediction to 2024-11-23 00:00:00+00:00, run_after=2024-11-24 00:00:00+00:00
 [2024-11-23T03:54:25.923+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/stock_price_prediction_dag.py took 0.229 seconds
+[2024-11-23T03:54:56.084+0000] {processor.py:161} INFO - Started process (PID=20355) to work on /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:54:56.085+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/stock_price_prediction_dag.py for tasks to queue
+[2024-11-23T03:54:56.087+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:54:56.086+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:54:56.138+0000] {processor.py:840} INFO - DAG(s) 'stock_price_prediction' retrieved from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:54:56.258+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:54:56.258+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-11-23T03:54:56.283+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:54:56.283+0000] {dag.py:3954} INFO - Setting next_dagrun for stock_price_prediction to 2024-11-23 00:00:00+00:00, run_after=2024-11-24 00:00:00+00:00
+[2024-11-23T03:54:56.302+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/stock_price_prediction_dag.py took 0.226 seconds
+[2024-11-23T03:55:26.462+0000] {processor.py:161} INFO - Started process (PID=20360) to work on /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:26.463+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/stock_price_prediction_dag.py for tasks to queue
+[2024-11-23T03:55:26.466+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:26.465+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:26.524+0000] {processor.py:840} INFO - DAG(s) 'stock_price_prediction' retrieved from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:26.653+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:26.653+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-11-23T03:55:26.679+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:26.679+0000] {dag.py:3954} INFO - Setting next_dagrun for stock_price_prediction to 2024-11-23 00:00:00+00:00, run_after=2024-11-24 00:00:00+00:00
+[2024-11-23T03:55:26.698+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/stock_price_prediction_dag.py took 0.244 seconds
+[2024-11-23T03:55:56.864+0000] {processor.py:161} INFO - Started process (PID=20365) to work on /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:56.865+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/stock_price_prediction_dag.py for tasks to queue
+[2024-11-23T03:55:56.867+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:56.867+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:56.920+0000] {processor.py:840} INFO - DAG(s) 'stock_price_prediction' retrieved from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:55:57.043+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:57.043+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-11-23T03:55:57.067+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:55:57.067+0000] {dag.py:3954} INFO - Setting next_dagrun for stock_price_prediction to 2024-11-23 00:00:00+00:00, run_after=2024-11-24 00:00:00+00:00
+[2024-11-23T03:55:57.087+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/stock_price_prediction_dag.py took 0.231 seconds
+[2024-11-23T03:56:27.254+0000] {processor.py:161} INFO - Started process (PID=20370) to work on /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:56:27.255+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/stock_price_prediction_dag.py for tasks to queue
+[2024-11-23T03:56:27.257+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:56:27.257+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:56:27.308+0000] {processor.py:840} INFO - DAG(s) 'stock_price_prediction' retrieved from /opt/airflow/dags/stock_price_prediction_dag.py
+[2024-11-23T03:56:27.423+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:56:27.423+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2024-11-23T03:56:27.446+0000] {logging_mixin.py:188} INFO - [2024-11-23T03:56:27.446+0000] {dag.py:3954} INFO - Setting next_dagrun for stock_price_prediction to 2024-11-23 00:00:00+00:00, run_after=2024-11-24 00:00:00+00:00
+[2024-11-23T03:56:27.465+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/stock_price_prediction_dag.py took 0.218 seconds
